@@ -1,0 +1,28 @@
+---
+- name: Ensure presence of directory for WordPress source.
+  file:
+    path: "{{ wp_install_path }}"
+    state: directory
+  register: path_created
+
+- name: Downloading and unpacking WordPress release.
+  unarchive:
+    remote_src: yes
+    src: "https://wordpress.org/{{ wp_release | default('latest') }}.tar.gz"
+    dest: "{{ wp_install_path }}"
+    extra_opts: "--strip-components=1"
+  when: path_created|changed or wp_overwrite_release|d(false)
+
+- name: Ensure `debug.log` file exists for debugging mode.
+  file:
+    state: file
+    mode: 0660
+    dest: "{{ wp_content_dir | default(wp_install_path ~ '/wp-content') }}/debug.log"
+  when: wp_enable_debug is defined
+
+- name: Adding wp-config.php file from template.
+  template:
+    src: wp-config.php.j2
+    dest: "{{ wp_install_path }}/wp-config.php"
+    backup: "{{ wp_enable_config_backup | default('true') }}"
+  when: wp_add_configuration_file

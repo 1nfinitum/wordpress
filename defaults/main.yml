@@ -1,0 +1,21 @@
+---
+wp_release: latest
+wp_add_configuration_file: true
+wp_install_path: /var/www/wordpress
+wp_overwrite_release: false
+wp_automatic_updater_disabled: true
+
+# Database configurations
+wp_db_name: 'wp_db'
+wp_db_user: 'wp_user'
+wp_db_password: 'wp_pass'
+wp_db_host: 'localhost'
+# Security keys configurations
+wp_auth_key: "W%|Z{rL+6fxXpu6@0bQ-9n|u@oB?~<%?yG-j05*y2!N_:.r9hGl<#(o/:U6lSxJC"
+wp_secure_auth_key: "M|5?y:3%zR9ZD[Pr6iT6CVubU.j-3~Y>+XMqxdW+Q [rFFw5(53aoj|ig]m3/1%b"
+wp_logged_in_key: ";JsZU|:#-s-F!yW<!L|{cPt+IPK*uW+E6Ime5TJjm0(^mEFwk2O_D+ZA|Z*SG{~d"
+wp_nonce_key: "X~+9aGddCX)S` pL_Bl7e|?zp`#cO:$4m|_}c0B8?.+&+e^`A-<v(PhAsK?sVu:|"
+wp_auth_salt: "Ag3WbMhb``xrkg.Htk|o1p6PAN0F[80/>d--C&rpw2bTiJ~U+Vqx+1eEC@pAQ]^s"
+wp_secure_auth_salt: "+uIao-KHo+sVD;c6/B@q}[n-u5{E&o{><MK{FV9`Dk#xq</bimkV?bxKDIy* PMM"
+wp_logged_in_salt: "$<kD*32hi!b$hW{&P<_E>)fq7?YivNg*RHoyKktn|ZHpHA=2ajv3ME@MF:uICT|-"
+wp_nonce_salt: "#NE_|qi>xa|_6ObI`OjF2(J|m}4}.]9{{ '{#' }}9dlXAjfsa~6|vFP[;ap-Z2$CwUh?]$k"
