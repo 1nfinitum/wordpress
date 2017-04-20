@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
   roles:
-    - wordpress
+    - role_under_test
